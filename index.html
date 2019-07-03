@@ -56,10 +56,6 @@
             left: 50%;
             margin: -100px 0 0 -150px;
         }
-
-        #logout {
-            display: none;
-        }
     </style>
 
     <script>
@@ -67,9 +63,20 @@
             heap.identify($("#email").val());
         }
 
+        let clearIdentity = () => {
+            heap.resetIdentity();
+            heap.clearEventProperties();
+        }
 
         $(document).ready(function () {
-            console.log(heap.identity);
+            if (!heap.identity) {
+                $("#login").show();
+                $("#logout").hide();
+            } else {
+
+                $("#logout").show();
+                $("#login").hide();
+            }
         });
     </script>
 </head>
@@ -95,7 +102,7 @@
         </div>
 
         <div id="logout">
-            <h1>logout</h1>
+            <h1 onclick="clearIdentity()">logout</h1>
         </div>
     </div>
 
