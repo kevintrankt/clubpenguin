@@ -93,6 +93,7 @@
 
         let login = () => {
             identify();
+            $(".penguin").show();
             $('#login-form').trigger("reset");
             $("#login").hide();
             $("#logout").show();
@@ -100,11 +101,13 @@
 
         let logout = () => {
             clearIdentity();
+            $(".penguin").hide();
             $("#login").show();
             $("#logout").hide();
         }
 
         $(document).ready(function () {
+            $(".penguin").hide();
             $('form > input').keyup(function () {
 
                 var empty = false;
