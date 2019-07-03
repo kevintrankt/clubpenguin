@@ -117,7 +117,7 @@
             let searchParams = new URLSearchParams(window.location.search)
             let disabled;
             if (searchParams.has('disableTextCapture')) {
-                disabled = searchParams.get('disableTextCapture');
+                disabled = searchParams.get('disableTextCapture') == 'true';
             } else {
                 disabled = false;
             }
