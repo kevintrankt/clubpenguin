@@ -74,6 +74,10 @@
             margin: -100px 0 0 -150px;
         }
 
+        .login-text {
+            margin: 0;
+        }
+
         #logout {
             display: none;
             cursor: pointer;
@@ -159,10 +163,10 @@
     <div class="container">
         <div id="login">
             <form id="login-form">
-                email:<br>
+                <p class="login-text">email:</p>
                 <input id="email" class="login-input" type="email" required>
                 <br>
-                password:<br>
+                <p class="login-text">password:</p>
                 <input class="login-input" type="password" heap-ignore='true' required>
                 <br><br>
                 <button id="signin" onclick="login()" type="button" disabled>login</button>
