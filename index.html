@@ -101,6 +101,7 @@
 
         let login = () => {
             identify();
+            heap.track('Login');
             $(".penguin").show();
             $('#login-form').trigger("reset");
             $("#login").hide();
