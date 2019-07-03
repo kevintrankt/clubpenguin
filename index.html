@@ -18,6 +18,12 @@
 
 
     <style>
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+
         .penguin {
             position: fixed;
             cursor: pointer;
@@ -76,6 +82,7 @@
 
         let login = () => {
             identify();
+            $('#login-form').trigger("reset");
             $("#login").hide();
             $("#logout").show();
         }
@@ -117,7 +124,7 @@
 
     <div class="container">
         <div id="login">
-            <form>
+            <form id="login-form">
                 email:<br>
                 <input id="email" class="login-input" type="email" required>
                 <br>
