@@ -72,14 +72,14 @@
 
     <div class="container">
         <div id="login">
-            <form>
+            <form onsubmit="return identify();">
                 email:<br>
                 <input id="email" class="login-input" type="email" name="email">
                 <br>
                 password:<br>
                 <input class="login-input" type="password" name="password" heap-ignore='true'>
                 <br><br>
-                <input type="submit" value="let em rip!" onclick="identify()">
+                <input type="submit" value="let em rip!">
             </form>
         </div>
     </div>
