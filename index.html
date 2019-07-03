@@ -56,9 +56,14 @@
             left: 50%;
             margin: -100px 0 0 -150px;
         }
+
+        #logout {
+            display: none;
+        }
     </style>
 
     <script>
+
         let identify = () => {
             heap.identify($("#email").val());
         }
@@ -68,15 +73,32 @@
             heap.clearEventProperties();
         }
 
-        $(document).ready(function () {
-            if (!heap.identity) {
-                $("#login").show();
-                $("#logout").hide();
-            } else {
+        let login = () => {
+            identify();
+            $("#login").hide();
+            $("#logout").show();
+            return false;
 
-                $("#logout").show();
-                $("#login").hide();
-            }
+        }
+
+        $(document).ready(function () {
+            $('form > input').keyup(function () {
+
+                var empty = false;
+                $('form > input').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#signin').attr('disabled', 'disabled');
+                } else {
+                    $('#signin').removeAttr('disabled');
+                }
+            });
+
+            clearIdentity();
         });
     </script>
 </head>
@@ -90,14 +112,14 @@
 
     <div class="container">
         <div id="login">
-            <form onsubmit="identify()  ">
+            <form>
                 email:<br>
                 <input id="email" class="login-input" type="email" required>
                 <br>
                 password:<br>
                 <input class="login-input" type="password" heap-ignore='true' required>
                 <br><br>
-                <input type="submit" value="let em rip!">
+                <button id="signin" onclick="login()" type="button" disabled>login</button>
             </form>
         </div>
 
