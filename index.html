@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <!-- just messing around with heap -->
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -165,6 +167,12 @@
             onClick="MyWindow=window.open('https://kevintrankt.com/clubpenguin/?popup=true','MyWindow','width=600,height=300'); return false;">Click!!
             123 44444</a>
 
+        <button>SHADOW DOM ACTUAL TEXT</button>
+        <script>
+            var host = document.querySelector('button');
+            var root = host.createShadowRoot();
+            root.textContent = 'SHADOW DOM FAKE TEXT';
+        </script>
 
     </div>
 
@@ -175,6 +183,9 @@
 
     <div class="container">
         <div id="login">
+
+
+
             <form id="login-form">
                 <p class="login-text">email:</p>
                 <input id="email" class="login-input" type="email" required name="lol">
@@ -184,6 +195,9 @@
                 <br><br>
                 <input id="signin" onclick="login()" type="submit" value="login" disabled></input>
             </form>
+
+
+
         </div>
 
         <div id="logout">
