@@ -151,8 +151,11 @@
                     $('#signin').removeAttr('disabled');
                 }
             });
+            
+            heap.resetIdentity();
+            heap.identify('test');
 
-            clearIdentity();
+//             clearIdentity();
         });
     </script>
 </head>
